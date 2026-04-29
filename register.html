@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Реєстрація — Меблі на замовлення">
+    <title>Меблі на замовлення — Реєстрація</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #auth {
+            min-height: calc(100vh - 74px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: var(--bg);
+        }
+
+        #register-card {
+            background: var(--beige);
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Коричнева шапка зверху — як у login */
+        #register-card aside {
+            background: var(--brown);
+            padding: 28px 36px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        #register-card aside h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        #register-card aside p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.84rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        #register-card form {
+            padding: 32px 36px 36px;
+        }
+
+        #register-card h2 {
+            display: none;
+        }
+
+        #register-card label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        #register-card input[type="text"],
+        #register-card input[type="email"],
+        #register-card input[type="password"] {
+            width: 100%;
+            background: #fff;
+            border: 1.5px solid #ddd;
+            border-radius: 50px;
+            padding: 12px 18px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            margin-bottom: 16px;
+            color: var(--dark);
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        #register-card input:focus {
+            border-color: var(--brown);
+        }
+
+        #register-card button {
+            background: var(--brown);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 32px;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        #register-card button:hover { opacity: 0.85; }
+
+        #register-card form > p {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        #register-card form > p a {
+            color: var(--brown);
+            font-weight: 500;
+        }
+
+        #register-card form > p a:hover { text-decoration: underline; }
+
+        #register-card aside a {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 8px 24px;
+            border: 1.5px solid rgba(255,255,255,0.6);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 0.84rem;
+            transition: background 0.2s;
+        }
+
+        #register-card aside a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        @media (max-width: 768px) {
+            #auth { padding: 24px 16px; align-items: flex-start; padding-top: 40px; }
+            #register-card { max-width: 100%; }
+            #register-card aside { padding: 22px 24px; }
+            #register-card aside h2 { font-size: 1.3rem; }
+            #register-card form { padding: 24px 24px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu">
+    <button type="button" onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+    <ul>
+        <li><a href="index.html">головна</a></li>
+        <li><a href="components.html">каталог</a></li>
+        <li><a href="contact.html">контакти</a></li>
+    </ul>
+    <a href="contact.html" class="cta">замовити</a>
+</nav>
+
+<header>
+    <button type="button" class="hamburger" onclick="document.getElementById('mobile-menu').classList.add('open')">☰</button>
+    <a href="index.html">MEBLI</a>
+    <nav>
+        <a href="index.html">головна</a>
+        <a href="components.html">каталог</a>
+        <a href="contact.html">контакти</a>
+    </nav>
+    <button type="button" onclick="window.location.href='login.html'">👤</button>
+</header>
+
+<main id="auth">
+    <article id="register-card">
+
+        <aside>
+            <h2>реєстрація</h2>
+            <p>Створіть акаунт щоб відстежувати замовлення та зберігати улюблені товари</p>
+            <a href="login.html">вже маю акаунт</a>
+        </aside>
+
+        <form action="/action_page.php" method="post">
+            <h2>Реєстрація</h2>
+
+            <label for="login">Login</label>
+            <input type="text" id="login" name="login" placeholder="Введіть логін" required>
+
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+            <label for="password">password</label>
+            <input type="password" id="password" name="password" placeholder="Мінімум 8 символів" required>
+
+            <label for="confirm_password">повторіть пароль</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Повторіть пароль" required>
+
+            <button type="submit">sing in</button>
+
+            <p>вже є акаунт? <a href="login.html">увійти</a></p>
+        </form>
+
+    </article>
+</main>
+
+<footer>
+    <section>
+        <h3>MEBELYKA</h3>
+        <p>Меблі що створені для вас</p>
+    </section>
+    <nav>
+        <h3>Навігація</h3>
+        <ul>
+            <li><a href="index.html">— Головна</a></li>
+            <li><a href="components.html">— Каталог</a></li>
+            <li><a href="contact.html">— Замовлення</a></li>
+        </ul>
+    </nav>
+    <address>
+        <h3>Контакти</h3>
+        <a href="tel:+380501234567">+38 (050) 123-45-67</a>
+        <a href="mailto:info@mebli.ua">info@mebli.ua</a>
+        <p>м. Ужгород, вул. Меблева, 5</p>
+    </address>
+    <section>
+        <h3>Соцмережі</h3>
+        <ul>
+            <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://t.me" target="_blank">Telegram</a></li>
+        </ul>
+    </section>
+    <small>© 2024 Меблі на замовлення. Усі права захищені.</small>
+</footer>
+
+</body>
+</html>

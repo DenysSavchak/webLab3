@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог меблів — кухні, шафи, гардеробні, спальні, офіс">
+    <meta name="keywords" content="каталог меблів, кухні на замовлення, шафи-купе, гардеробні">
+    <meta name="author" content="Меблі на замовлення">
+    <title>Меблі на замовлення — Каталог</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #catalog > section {
+            scroll-margin-top: 80px;
+        }
+        /* Categories grid on catalog page */
+        #catalog-categories {
+            padding: 60px 60px 0;
+            background: #fff;
+            text-align: center;
+        }
+        #catalog-categories h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 36px;
+        }
+        #catalog-categories ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        #catalog-categories li {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        #catalog-categories figure { margin: 0; width: 100%; height: 100%; }
+        #catalog-categories img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        #catalog-categories li:hover img { transform: scale(1.06); }
+        #catalog-categories figcaption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 20px 16px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: left;
+        }
+        #catalog-categories a { display: block; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu">
+    <button onclick="document.getElementById('mobile-menu').classList.remove('open')">✕</button>
+    <ul>
+        <li><a href="index.html">головна</a></li>
+        <li><a href="components.html">каталог</a></li>
+        <li><a href="contact.html">контакти</a></li>
+    </ul>
+    <a href="contact.html" class="cta">замовити</a>
+</nav>
+
+<header>
+    <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.add('open')">☰</button>
+    <a href="index.html">MEBLI</a>
+    <nav>
+        <a href="index.html">головна</a>
+        <a href="components.html" class="active">каталог</a>
+        <a href="contact.html">контакти</a>
+    </nav>
+    <button onclick="window.location.href='login.html'">👤</button>
+</header>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80" alt="Каталог меблів">
+    <h1>Каталог меблів на замовлення</h1>
+</section>
+
+<!-- КАТЕГОРІЇ НА СТОРІНЦІ КАТАЛОГУ -->
+<section id="catalog-categories">
+    <h2>Наші категорії</h2>
+    <ul>
+        <li>
+            <a href="#kitchen">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Кухні">
+                <figcaption>Кухні →</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li>
+            <a href="#wardrobe">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Шафи-купе">
+                <figcaption>Шафи-купе →</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li>
+            <a href="#closet">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Гардеробні">
+                <figcaption>Гардеробні →</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li>
+            <a href="#bedroom">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Спальні">
+                <figcaption>Спальні →</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li>
+            <a href="#office">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Офіс">
+                <figcaption>Офіс →</figcaption>
+            </figure>
+            </a>
+        </li>
+        <li>
+            <a href="#children">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Дитячі">
+                <figcaption>Дитячі →</figcaption>
+            </figure>
+            </a>
+        </li>
+    </ul>
+</section>
+
+
+<!-- INTRO -->
+<section id="links">
+    <p style="max-width:700px; font-size:0.95rem; color:#555; margin-bottom:20px;">
+        На цій сторінці представлено детальний опис кожної категорії меблів, які ми виготовляємо.
+        Ознайомтеся з матеріалами, стилями та перевагами кожного виду продукції.
+    </p>
+    <h2>Швидка навігація</h2>
+    <ul>
+        <li><a href="#kitchen">🍽️ Кухні</a></li>
+        <li><a href="#wardrobe">🚪 Шафи-купе</a></li>
+        <li><a href="#bedroom">🛏️ Меблі для спальні</a></li>
+        <li><a href="#office">🖥️ Офісні меблі</a></li>
+        <li><a href="#hallway">🏠 Меблі для передпокою</a></li>
+        <li><a href="#children">🧸 Дитячі меблі</a></li>
+        <li><a href="#custom">🔨 Меблі на замовлення</a></li>
+        <li><a href="#catalog-comparison">📊 Порівняльна таблиця</a></li>
+    </ul>
+</section>
+
+<!-- CATALOG SECTIONS -->
+<main id="catalog">
+
+    <!-- КУХНІ -->
+    <section id="kitchen">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Кухні на замовлення">
+        </figure>
+        <article>
+            <h2>🍽️ Кухні</h2>
+            <p>Кухня — серце кожного будинку. Ми виготовляємо кухонні гарнітури будь-якої конфігурації: прямі, кутові, П-подібні та острівні.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Індивідуальне проектування</li>
+                <li>ЛДСП Egger та МДФ фасади</li>
+                <li>Фурнітура Blum та Hettich</li>
+                <li>Вбудована техніка</li>
+                <li>LED підсвітка</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <ul>
+                <li>ЛДСП Egger</li>
+                <li>МДФ фарбований</li>
+                <li>Масив дуба</li>
+                <li>Акрилові фасади</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- ШАФИ-КУПЕ -->
+    <section id="wardrobe">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Шафи-купе">
+        </figure>
+        <article>
+            <h2>🚪 Шафи-купе</h2>
+            <p>Шафи-купе — ідеальне рішення для економії простору. Ми виготовляємо вбудовані та окремостоячі шафи з дзеркальними, скляними або глухими дверима на будь-який розмір і конфігурацію.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Вбудовані та окремостоячі</li>
+                <li>Дзеркальні двері</li>
+                <li>Індивідуальне наповнення</li>
+                <li>Алюмінієві профілі</li>
+                <li>До 3.2 м висотою</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <ul>
+                <li>ЛДСП 16–25 мм</li>
+                <li>МДФ панелі</li>
+                <li>Дзеркало та скло</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- СПАЛЬНІ -->
+    <section id="bedroom">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Меблі для спальні">
+        </figure>
+        <article>
+            <h2>🛏️ Меблі для спальні</h2>
+            <p>Спальня — місце відпочинку та відновлення. Ми виготовляємо комплекти меблів для спальні: ліжка з підйомним механізмом, прикроватні тумби, туалетні столики та гардеробні системи.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Ліжка з підйомним механізмом</li>
+                <li>Гардеробні системи</li>
+                <li>Вбудовані тумби</li>
+                <li>Туалетні столики</li>
+                <li>Системи зберігання</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <ul>
+                <li>ЛДСП Egger</li>
+                <li>Масив</li>
+                <li>Тканина та екошкіра</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- ОФІСНІ МЕБЛІ -->
+    <section id="office">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Офісні меблі">
+        </figure>
+        <article>
+            <h2>🖥️ Офісні меблі</h2>
+            <p>Офісні меблі — це не лише функціональність, але й відображення корпоративного стилю. Ми виготовляємо робочі столи, стелажі, тумби та переговорні столи.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Робочі столи</li>
+                <li>Стелажі та шафи</li>
+                <li>Ресепшн-стійки</li>
+                <li>Переговорові столи</li>
+                <li>Кабінетні канапи</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <ul>
+                <li>ЛДСП 25 мм</li>
+                <li>МДФ панелі</li>
+                <li>Метал</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- ПЕРЕДПОКІЙ -->
+    <section id="hallway">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Меблі для передпокою">
+        </figure>
+        <article>
+            <h2>🏠 Меблі для передпокою</h2>
+            <p>Передпокій — перше враження від вашого дому. Ми створюємо функціональні та стильні меблі для прихожої: вішалки, взуттєві тумби, дзеркала та системи зберігання.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Вішалки та крючки</li>
+                <li>Взуттєві тумби</li>
+                <li>Дзеркала в рамі</li>
+                <li>Пуфи з ящиками</li>
+                <li>Вбудовані шафи</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <ul>
+                <li>ЛДСП Egger</li>
+                <li>МДФ фарбований</li>
+                <li>Дзеркало</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- ДИТЯЧІ МЕБЛІ -->
+    <section id="children">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Дитячі меблі">
+        </figure>
+        <article>
+            <h2>🧸 Дитячі меблі</h2>
+            <p>Дитячі меблі мають бути безпечними, яскравими та функціональними. Ми виготовляємо дитячі ліжка, двоярусні ліжка, парти, шафи та стелажі із екологічно сертифікованих матеріалів класу E0.5.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Екологічні матеріали E0.5</li>
+                <li>Двоярусні ліжка</li>
+                <li>Парти з регулюванням</li>
+                <li>Системи зберігання</li>
+                <li>Без гострих кутів</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <ul>
+                <li>ЛДСП E0.5</li>
+                <li>МДФ панелі</li>
+                <li>Масив сосни</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- НА ЗАМОВЛЕННЯ -->
+    <section id="closet" style="display:none"></section>
+    <section id="custom">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Меблі на замовлення">
+        </figure>
+        <article>
+            <h2>🔨 Меблі на замовлення</h2>
+            <p>Маєте нестандартний простір або особливі побажання? Ми розробляємо та виготовляємо меблі за індивідуальними ескізами та кресленнями замовника.</p>
+
+            <h4>Особливості:</h4>
+            <ol>
+                <li>Розробка дизайн-проекту</li>
+                <li>3D-візуалізація</li>
+                <li>Будь-який розмір та форма</li>
+                <li>Широкий вибір матеріалів</li>
+                <li>Монтаж та гарантія</li>
+            </ol>
+
+            <h4>Матеріали які використовуються:</h4>
+            <dl>
+                <dt>Корпус:</dt>
+                <dd>ЛДСП Egger, МДФ, Масив</dd>
+                <dt>Фасади:</dt>
+                <dd>Акрил, Фарбований МДФ, Шпон</dd>
+                <dt>Фурнітура:</dt>
+                <dd>Blum, Hettich, GTV</dd>
+            </dl>
+        </article>
+    </section>
+
+</main>
+
+<!-- ПОРІВНЯЛЬНА ТАБЛИЦЯ МОДЕЛЕЙ -->
+<section id="catalog-comparison">
+    <h2>Порівняльні моделі меблів нашого виробництва</h2>
+    <table>
+        <tr>
+            <th colspan="7">Топові моделі меблів</th>
+        </tr>
+        <tr>
+            <th>Категорія</th>
+            <th>Модель</th>
+            <th>Матеріал</th>
+            <th>Розмір</th>
+            <th>Колір</th>
+            <th>Рейтинг</th>
+            <th>Цінова категорія</th>
+        </tr>
+        <tr>
+            <td rowspan="3">ЛДСП</td>
+            <td>Стандарт</td>
+            <td>ЛДСП 16 мм</td>
+            <td>Будь-який</td>
+            <td>Білий / Дуб</td>
+            <td>★★★☆☆</td>
+            <td>Бюджетна</td>
+        </tr>
+        <tr>
+            <td>Комфорт</td>
+            <td>ЛДСП + дзеркало</td>
+            <td>До 3.0 м</td>
+            <td>Венге / Сонома</td>
+            <td>★★★★☆</td>
+            <td>Середня</td>
+        </tr>
+        <tr>
+            <td>Преміум</td>
+            <td>ЛДСП + МДФ фасад</td>
+            <td>До 3.5 м</td>
+            <td>Індивідуально</td>
+            <td>★★★★☆</td>
+            <td>Висока</td>
+        </tr>
+        <tr>
+            <td rowspan="3">МДФ</td>
+            <td>Класик</td>
+            <td>МДФ фарбований</td>
+            <td>Стандарт</td>
+            <td>Будь-який RAL</td>
+            <td>★★★★☆</td>
+            <td>Середня</td>
+        </tr>
+        <tr>
+            <td>Акрил</td>
+            <td>МДФ + акрил</td>
+            <td>Будь-який</td>
+            <td>Глянець</td>
+            <td>★★★★☆</td>
+            <td>Висока</td>
+        </tr>
+        <tr>
+            <td>Матовий</td>
+            <td>МДФ матовий</td>
+            <td>Будь-який</td>
+            <td>Матовий</td>
+            <td>★★★★★</td>
+            <td>Висока</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Масив</td>
+            <td>Дуб натуральний</td>
+            <td>Масив дуба</td>
+            <td>Індивідуально</td>
+            <td>Натуральний</td>
+            <td>★★★★★</td>
+            <td>Преміум</td>
+        </tr>
+        <tr>
+            <td>Ясен</td>
+            <td>Масив ясена</td>
+            <td>Індивідуально</td>
+            <td>Морений</td>
+            <td>★★★★★</td>
+            <td>Преміум</td>
+        </tr>
+        <tr>
+            <td colspan="3"><b>Мінімальне замовлення:</b></td>
+            <td colspan="4">Від 1 виробу. Виміри та консультація — безкоштовно.</td>
+        </tr>
+    </table>
+</section>
+
+<!-- VIDEO -->
+<section id="video-section">
+    <h2>Відео огляди</h2>
+    <ul>
+        <li>
+            <iframe src="https://player.vimeo.com/video/1170214503?h=74405de5da"
+                title="Як вибрати кухню"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </li>
+        <li>
+            <iframe src="https://player.vimeo.com/video/1170216265?h=ad11c5f368"
+                title="Огляд шаф-купе"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </li>
+    </ul>
+</section>
+
+<footer>
+    <section>
+        <h3>MEBELYKA</h3>
+        <p>Меблі що створені для вас</p>
+    </section>
+    <nav>
+        <h3>Навігація</h3>
+        <ul>
+            <li><a href="index.html">— Головна</a></li>
+            <li><a href="components.html">— Каталог</a></li>
+            <li><a href="contact.html">— Замовлення</a></li>
+        </ul>
+    </nav>
+    <address>
+        <h3>Контакти</h3>
+        <a href="tel:+380501234567">+38 (050) 123-45-67</a>
+        <a href="mailto:info@mebli.ua">info@mebli.ua</a>
+        <p>м. Ужгород, вул. Меблева, 5</p>
+    </address>
+    <section>
+        <h3>Контакти</h3>
+        <ul>
+            <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://t.me" target="_blank">Telegram</a></li>
+        </ul>
+    </section>
+    <small>© 2024 Меблі на замовлення. Усі права захищені.</small>
+</footer>
+
+</body>
+</html>
